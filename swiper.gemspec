@@ -1,7 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'swiper'
   s.version     = '0.0.2'
-  s.date        = '2012-01-12'
   s.summary     = "Parses Track 1 magstripe data"
   s.description = "Parses Track 1 magstripe data"
   s.authors     = ["Gary Moore"]
