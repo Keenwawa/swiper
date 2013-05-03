@@ -18,6 +18,8 @@ class Swiper
     return false if cant_parse?(swiped_data)
       
     tracks = swiped_data.scan(/^%(.*)\?;(.*)\?$/)
+    return false if tracks[0].nil?
+
     raw_track1 = tracks[0][0]
     track1_groups = raw_track1.scan(/^(.)(\d*)\^([^\/]*)\/(.*)\^(..)(..)(.*)$/)
       
