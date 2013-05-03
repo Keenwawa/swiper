@@ -3,7 +3,7 @@ class Swiper
   attr_accessor :track1
 
   def self.can_parse?(swiped_data)
-    !swiped_data.nil? && swiped_data.start_with?('%B')
+    !swiped_data.nil? && swiped_data.start_with?('%B') && !swiped_data.scan(/^%(.*)\?;(.*)\?$/)[0].nil?
   end
   
   def self.cant_parse?(swiped_data)
@@ -18,8 +18,6 @@ class Swiper
     return false if cant_parse?(swiped_data)
       
     tracks = swiped_data.scan(/^%(.*)\?;(.*)\?$/)
-    return false if tracks[0].nil?
-
     raw_track1 = tracks[0][0]
     track1_groups = raw_track1.scan(/^(.)(\d*)\^([^\/]*)\/(.*)\^(..)(..)(.*)$/)
       

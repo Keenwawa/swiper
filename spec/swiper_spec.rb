@@ -1,8 +1,12 @@
 require 'spec_helper'
 describe Swiper do
   it "should tell you if it can parse the data" do
-    Swiper.can_parse?('%B').should be_true
+    Swiper.can_parse?('%B').should be_false
+    Swiper.can_parse?('%BGARBAGE').should be_false
     Swiper.can_parse?('3').should be_false
+    Swiper.can_parse?(nil).should be_false
+    Swiper.can_parse?('%B0123456789012345^DURDEN/TYLER Q^1409101000000000000000000000000?;0123456789012345=15021010000000000869?').should be_true
+    Swiper.can_parse?('%B0123456789012345^DURDEN/TYLER Q^1409101000000000000000000000000?;?').should be_true
   end
   
   describe "parsing track data" do
