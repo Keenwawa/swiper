@@ -13,10 +13,10 @@ Bundler
     gem 'swiper'
 
 ## Use
-    swiped_data = "%B1234567890123445^SMITH/L.                ^99011200000000000000**XXX******?*"
+    swiped_data = "%B0123456789012345^DURDEN/TYLER Q^1409101000000000000000000000000?;0123456789012345=15021010000000000869?"
 
     if Swiper.can_parse? swiped_data
-      card_data = Swiper.parse(swped_data)
+      card_data = Swiper.parse(swiped_data)
     end
     
     puts card_data.track1.raw
