@@ -1,3 +1,6 @@
-source :rubygems
+source 'https://rubygems.org'
 gemspec
-gem 'rspec'
+
+group :test do
+  gem 'rspec'
+end
